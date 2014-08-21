@@ -1,0 +1,177 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>WEB安全监控系统使用说明</title>
+<style>A {
+FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ffcc00
+}
+A.blue {
+	COLOR: darkblue
+}
+body, p, td {
+	FONT-SIZE: 12px
+}</style>
+</head>
+
+<body style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #000000 1px solid; MARGIN: 0pt; OVERFLOW: hidden; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#009ace" leftMargin="0" topMargin="10">
+
+<div align="center">
+  <center>
+  <p>　</p>
+  <p>　</p>
+  <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-style: dotted; border-width: 1" bordercolor="#000000" width="529" height="251" id="AutoNumber1">
+    <tr>
+      <td width="520" height="20" bgcolor="#000000"><font color="#FFFFFF">&nbsp;WEB安全监控系统 
+		&amp; 使用说明</font></td>
+    </tr>
+    <tr>
+      <td width="529" height="210" bgcolor="#FFAD00" valign="top"><br>
+&nbsp;&nbsp; 欢迎使用WEB安全监控系统<br>
+      <br>
+&nbsp;&nbsp; 使用前请您先阅读以下条款，以帮助你使用本系统的文件！<br>
+&nbsp;&nbsp; 1) 本系统不保证平台账号密码的保密性和安全性<br>
+&nbsp;&nbsp; 2) 请在使用前配置好核心控制器文件和入口文件里的数据库<br>
+&nbsp;&nbsp; 3) 请在安装过程谨慎地配置目录权限，做好数据库备份。<br>
+&nbsp;&nbsp; 4) 由本系统提供的搜索格式在错误页面有提示。<br>
+&nbsp;&nbsp; 5) 移植本系统提供的资源请勿删除本说明文件。<br>
+&nbsp;&nbsp; 6) 本系统部分程序为网上搜集，如果该程序涉及或侵害到您的版权请立即写信通知我们。
+
+<p>&nbsp;&nbsp; <a href="http://bbs.crsky.com">更多问题请到作者博客||http://www.dawner.info，在那里您可以得到更多的技术支持！</a></p>
+      <p>&nbsp;&nbsp; 联系作者： <a href="mailto:demon@dawner.info">demon@dawner.info</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="mailto:crsky@yeah.net"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span></a>&nbsp;&nbsp; <font size="2"><i>D</i></font><i><font size="2">awn_Guard</font><b><a href="http://www.dawner.info"><font size="2"><font color="#FF0000">！</font><font color="#FFFF00">！</font><font color="#009ACE">！</font></font></a></b></i></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="529" height="16" bgcolor="#009BCE" bordercolor="#008000">
+      <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="50" scrolldelay="100" behavior="slide" loop="1">&nbsp;
+      <a href="http://wWW.cRSKY.cOM">黎明守护者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by dawner.info</a></marquee> </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center">
+</p>
+<script language="JavaScript">
+<!-- Begin
+ 
+var rate = 20;
+var obj;
+var act = 0;
+var elmH = 0;
+var elmS = 128;
+var elmV = 255;
+var clrOrg;
+var TimerID;
+if (navigator.appName.indexOf("Microsoft",0) != -1 && parseInt(navigator.appVersion) >= 4) {
+Browser = true;
+} else {
+Browser = false;
+}
+
+if (Browser) {
+document.onmouseover = doRainbowAnchor;
+document.onmouseout = stopRainbowAnchor;
+}
+function doRainbow()
+{
+if (Browser && act != 1) {
+act = 1;
+obj = event.srcElement;
+clrOrg = obj.style.color;
+TimerID = setInterval("ChangeColor()",100);
+}
+}
+function stopRainbow()
+{
+if (Browser && act != 0) {
+obj.style.color = clrOrg;
+clearInterval(TimerID);
+act = 0;
+}
+}
+function doRainbowAnchor()
+{
+if (Browser && act != 1) {
+obj = event.srcElement;
+
+while (obj.tagName != 'A' && obj.tagName != 'BODY') {
+obj = obj.parentElement;
+if (obj.tagName == 'A' || obj.tagName == 'BODY')
+break;
+}
+
+if (obj.tagName == 'A' && obj.href != '') {
+act = 1;
+clrOrg = obj.style.color;
+TimerID = setInterval("ChangeColor()",100);
+}
+}
+}
+function stopRainbowAnchor()
+{
+if (Browser && act != 0) {
+if (obj.tagName == 'A') {
+obj.style.color = clrOrg;
+clearInterval(TimerID);
+act = 0;
+}
+}
+}
+function ChangeColor()
+{
+obj.style.color = makeColor();
+}
+function makeColor()
+{
+if (elmS == 0) {
+elmR = elmV; elmG = elmV; elmB = elmV;
+}
+else {
+t1 = elmV;
+t2 = (255 - elmS) * elmV / 255;
+t3 = elmH % 60;
+t3 = (t1 - t2) * t3 / 60;
+
+if (elmH < 60) {
+elmR = t1; elmB = t2; elmG = t2 + t3;
+}
+else if (elmH < 120) {
+elmG = t1; elmB = t2; elmR = t1 - t3;
+}
+else if (elmH < 180) {
+elmG = t1; elmR = t2; elmB = t2 + t3;
+}
+else if (elmH < 240) {
+elmB = t1; elmR = t2; elmG = t1 - t3;
+}
+else if (elmH < 300) {
+elmB = t1; elmG = t2; elmR = t2 + t3;
+}
+else if (elmH < 360) {
+elmR = t1; elmG = t2; elmB = t1 - t3;
+}
+else {
+elmR = 0; elmG = 0; elmB = 0;
+}
+}
+elmR = Math.floor(elmR);
+elmG = Math.floor(elmG);
+elmB = Math.floor(elmB);
+clrRGB = '#' + elmR.toString(16) + elmG.toString(16) + elmB.toString(16);
+elmH = elmH + rate;
+if (elmH >= 360)
+elmH = 0;
+return clrRGB;
+}
+//  End -->
+</script>
+</body>
+
+</html>

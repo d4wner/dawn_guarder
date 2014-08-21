@@ -1,0 +1,40 @@
+//function doview(id)
+			//	{
+			//		//$('#modal-container-947598').modal('show')
+			//		$('#modal-container-947598').modal('show')
+			//		{
+			//			//document.getElementById('container').value="123";
+			//			//document.getElementById('container').innerHTML = '123';
+			//			//var $hehe = id;
+			//	//document.getElementById('container').innerHTML = id;
+			//	//
+
+			//		}
+
+			//		//$('#modal-container-947598').modal('shown')
+			//		//	{
+			//			//$(".btn-primary").attr('href','Del.asp?id='+id);
+			//		//	alert('123');
+			//			
+			//		//	}
+			//	}
+
+			//function preview()
+			//{
+			
+			//alert('123');
+			//}
+
+			//$("#modal-947598").click(function()
+		//	function preview1(filestr)
+		//	{
+		//	alert('test');
+		//	params='?home.file_read&file_url='+<?php echo $file;?>+filestr;
+		//	$.get(params, function(result)
+		//		{
+		//	$(".modal-body p").text(result)
+		//	$('#modal-container-947598').modal('show');
+		//		}
+		//		);
+		//	};		
+
